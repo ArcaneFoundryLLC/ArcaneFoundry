@@ -16,7 +16,7 @@ _Last updated: December 2024_
 - [x] Initialize Next.js 14 project with TypeScript
 - [x] Configure Tailwind CSS and shadcn/ui
 - [x] Set up project structure following the spec
-- [ ] Configure ESLint, Prettier, and Git hooks
+- [x] Configure ESLint, Prettier, and Git hooks
 - [ ] Set up Vercel deployment pipeline
 
 ### Day 2: Core Components
