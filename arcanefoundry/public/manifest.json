@@ -1,0 +1,27 @@
+{
+  "name": "Arcane Foundry LLC - Senior Full-Stack Developer",
+  "short_name": "Arcane Foundry",
+  "description": "Senior full-stack developer based in Floyd, Virginia, serving the greater Roanoke Valley region with local expertise and remote capabilities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
