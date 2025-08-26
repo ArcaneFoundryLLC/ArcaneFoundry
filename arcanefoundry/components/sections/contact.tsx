@@ -20,10 +20,37 @@ export function Contact() {
     message: ""
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Integrate with Formspree or similar service
-    console.log("Form submitted:", formData)
+    
+    try {
+      const response = await fetch('https://formspree.io/f/josh-wassum@arcane-foundry.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      if (response.ok) {
+        // Reset form on success
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          project: "",
+          timeline: "",
+          budget: "",
+          message: ""
+        })
+        alert('Thank you! Your message has been sent successfully.')
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('Sorry, there was an error sending your message. Please try again or email me directly at josh-wassum@arcane-foundry.com')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -161,7 +188,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-slate-900">Email</p>
-                  <p className="text-slate-600">hello@arcane-foundry.com</p>
+                  <p className="text-slate-600">josh-wassum@arcane-foundry.com</p>
                 </div>
               </div>
 

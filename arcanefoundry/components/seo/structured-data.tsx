@@ -6,7 +6,7 @@ export function StructuredData() {
     "description": "Senior full-stack developer specializing in Power Platform development, performance optimization, and custom software solutions.",
     "url": "https://arcane-foundry.com",
     "telephone": "+1-XXX-XXX-XXXX", // Replace with actual phone number
-    "email": "contact@arcane-foundry.com", // Replace with actual email
+    "email": "josh-wassum@arcane-foundry.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Floyd",
