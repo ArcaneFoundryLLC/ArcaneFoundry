@@ -5,40 +5,40 @@ import { ArrowRight, Code, Zap, Shield, Database, Smartphone, Globe, BarChart3 }
 
 const services = [
   {
-    name: "Full-Stack Development",
-    description: "End-to-end web applications with modern frameworks like Next.js, React, and Node.js. Clean, maintainable code that scales.",
-    icon: Code,
-    features: ["React/Next.js", "Node.js/Express", "TypeScript", "Database design"]
+    name: "Business Websites",
+    description: "Professional websites that showcase your business and attract customers. Modern, responsive designs that work perfectly on all devices.",
+    icon: Globe,
+    features: ["Custom design", "Mobile responsive", "SEO optimized", "Fast loading"]
   },
   {
-    name: "Power Platform Development",
-    description: "Expert Power Platform solutions including Power Apps, Power BI, Power Automate, and SharePoint. From data integration to complex business applications.",
+    name: "E-commerce Solutions",
+    description: "Online stores that help you sell products and services. Complete e-commerce platforms with payment processing and inventory management.",
+    icon: Smartphone,
+    features: ["Online payments", "Inventory tracking", "Order management", "Customer accounts"]
+  },
+  {
+    name: "Business Software",
+    description: "Custom software solutions tailored to your business needs. From simple tools to complex applications that streamline your operations.",
+    icon: Code,
+    features: ["Custom applications", "Database systems", "User management", "Reporting tools"]
+  },
+  {
+    name: "Power Platform Solutions",
+    description: "Microsoft Power Platform expertise for businesses. Power Apps, Power BI, and Power Automate to automate and optimize your processes.",
     icon: Zap,
     features: ["Power Apps", "Power BI", "Power Automate", "SharePoint integration"]
   },
   {
-    name: "Performance Optimization",
-    description: "Make your applications lightning fast. I identify bottlenecks and implement solutions that improve user experience.",
+    name: "Website Maintenance",
+    description: "Keep your website running smoothly with regular updates, security patches, and performance monitoring. Peace of mind for your online presence.",
+    icon: Shield,
+    features: ["Security updates", "Performance monitoring", "Content updates", "Backup systems"]
+  },
+  {
+    name: "Local SEO & Marketing",
+    description: "Help local customers find your business online. SEO optimization and digital marketing strategies tailored for Floyd County businesses.",
     icon: BarChart3,
-    features: ["Core Web Vitals", "Database optimization", "Caching strategies", "Bundle optimization"]
-  },
-  {
-    name: "Mobile & PWA",
-    description: "Responsive web apps that work like native mobile applications. Cross-platform solutions that reach all your users.",
-    icon: Smartphone,
-    features: ["Progressive Web Apps", "Mobile-first design", "Touch optimization", "Offline support"]
-  },
-  {
-    name: "Database & Backend",
-    description: "Robust backend systems that handle your data securely and efficiently. From simple APIs to complex data pipelines.",
-    icon: Database,
-    features: ["REST/GraphQL APIs", "Database design", "Authentication", "Data security"]
-  },
-  {
-    name: "DevOps & Deployment",
-    description: "Streamline your development workflow with CI/CD, containerization, and cloud deployment strategies.",
-    icon: Globe,
-    features: ["Docker/Kubernetes", "CI/CD pipelines", "Cloud deployment", "Monitoring"]
+    features: ["Local SEO", "Google My Business", "Social media", "Analytics tracking"]
   }
 ]
 
@@ -51,7 +51,7 @@ export function Services() {
             Services that deliver results
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            From concept to deployment, I provide the technical expertise you need to build better software.
+            Helping Floyd County businesses establish and grow their online presence with professional websites and custom software solutions.
           </p>
         </div>
 

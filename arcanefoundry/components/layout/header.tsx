@@ -58,8 +58,8 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Button variant="ember" size="sm">
-              Start a Project
+            <Button variant="ember" size="sm" asChild>
+              <a href="#contact">Start a Project</a>
             </Button>
           </div>
 
@@ -96,8 +96,8 @@ export function Header() {
                 </a>
               ))}
               <div className="pt-4">
-                <Button variant="ember" className="w-full">
-                  Start a Project
+                <Button variant="ember" className="w-full" asChild>
+                  <a href="#contact">Start a Project</a>
                 </Button>
               </div>
             </div>

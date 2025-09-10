@@ -21,7 +21,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="mt-6 text-lg leading-8 text-slate-600 sm:text-xl">
-            I build fast, reliable software that ships on time. From AI features to performance optimization, I help teams deliver better products faster.
+            I build fast, reliable websites and software solutions for local businesses. From custom websites to business applications, I help Floyd County businesses grow their online presence.
           </p>
 
           {/* Local Focus */}
@@ -32,12 +32,16 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button variant="ember" size="lg" className="group">
-              Start a Project
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button variant="ember" size="lg" className="group" asChild>
+              <a href="#contact">
+                Start a Project
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
-            <Button variant="outline" size="lg">
-              View Portfolio
+            <Button variant="outline" size="lg" asChild>
+              <a href="#case-studies">
+                View Portfolio
+              </a>
             </Button>
             <Button variant="ghost" size="lg" asChild>
               <a href="https://www.linkedin.com/in/joshwassum/" target="_blank" rel="noopener noreferrer" className="flex items-center">

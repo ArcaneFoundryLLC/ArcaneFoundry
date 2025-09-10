@@ -146,7 +146,7 @@ export function Contact() {
                     name="project"
                     value={formData.project}
                     onChange={handleChange}
-                    placeholder="e.g., E-commerce website, AI chatbot, API development"
+                    placeholder="e.g., Business website, E-commerce store, Custom software"
                   />
                 </div>
 
@@ -176,8 +176,8 @@ export function Contact() {
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Get in touch</h3>
               <p className="text-slate-600 mb-6">
-                I'm always interested in hearing about new projects and opportunities. 
-                Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                I specialize in helping local businesses in Floyd County and surrounding areas establish their online presence. 
+                Whether you need a new website, want to improve your existing one, or need custom software solutions, I'm here to help!
               </p>
             </div>
 
@@ -208,7 +208,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-slate-900">Location</p>
-                  <p className="text-slate-600">Virginia, USA (Remote available)</p>
+                  <p className="text-slate-600">Floyd, Virginia (Serving local & remote)</p>
                 </div>
               </div>
             </div>

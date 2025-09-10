@@ -98,9 +98,6 @@ export function Footer() {
                  <p className="text-sm text-slate-500">
                    © 2024 Arcane Foundry LLC. All rights reserved.
                  </p>
-                 <p className="text-xs text-slate-400 mt-1">
-                   Some content drafted with AI assistance and carefully reviewed by humans for accuracy and clarity.
-                 </p>
                </div>
                <div className="flex space-x-6">
                  {navigation.legal.map((item) => (
