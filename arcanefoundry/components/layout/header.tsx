@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Menu, X } from "lucide-react"
@@ -14,6 +15,8 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isTradeEqualizer = pathname?.startsWith("/tradeequalizer")
 
   return (
     <>
@@ -29,59 +32,78 @@ export function Header() {
           <nav className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Arcane Foundry</span>
-              <div className="flex items-center space-x-2">
-                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-ember to-copper flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">AF</span>
+            {isTradeEqualizer ? (
+              <div className="-m-1.5 p-1.5 cursor-default" aria-label="Arcane Foundry">
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-ember to-copper flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">AF</span>
+                  </div>
+                  <span className="font-display text-xl font-semibold text-slate-900">
+                    Arcane Foundry
+                  </span>
                 </div>
-                <span className="font-display text-xl font-semibold text-slate-900">
-                  Arcane Foundry
-                </span>
               </div>
-            </Link>
+            ) : (
+              <Link href="/" className="-m-1.5 p-1.5">
+                <span className="sr-only">Arcane Foundry</span>
+                <div className="flex items-center space-x-2">
+                  <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-ember to-copper flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">AF</span>
+                  </div>
+                  <span className="font-display text-xl font-semibold text-slate-900">
+                    Arcane Foundry
+                  </span>
+                </div>
+              </Link>
+            )}
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex lg:gap-x-8" aria-label="Main navigation">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-slate-700 hover:text-ember transition-colors"
-                aria-label={`Go to ${item.name} section`}
-              >
-                {item.name}
-              </a>
-            ))}
-          </nav>
+          {!isTradeEqualizer && (
+            <nav className="hidden lg:flex lg:gap-x-8" aria-label="Main navigation">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium text-slate-700 hover:text-ember transition-colors"
+                  aria-label={`Go to ${item.name} section`}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+          )}
 
           {/* CTA Button */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Button variant="ember" size="sm" asChild>
-              <a href="#contact">Start a Project</a>
-            </Button>
-          </div>
+          {!isTradeEqualizer && (
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+              <Button variant="ember" size="sm" asChild>
+                <a href="#contact">Start a Project</a>
+              </Button>
+            </div>
+          )}
 
           {/* Mobile menu button */}
-          <div className="flex lg:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <span className="sr-only">Open main menu</span>
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
-          </div>
+          {!isTradeEqualizer && (
+            <div className="flex lg:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <span className="sr-only">Open main menu</span>
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </Button>
+            </div>
+          )}
         </nav>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
+        {!isTradeEqualizer && mobileMenuOpen && (
           <nav className="lg:hidden" aria-label="Mobile navigation">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
