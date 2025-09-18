@@ -3,11 +3,12 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Shield, Smartphone, Zap } from "lucide-react";
 import SignupSection from "./signup-section";
+import ImageGallery from "./image-gallery";
 
 export const metadata: Metadata = {
-  title: "TradeEqualizer – Private Preview",
+  title: "TradeEqualizer – MTG Trade App | Fair Trades Tool | LGS Trading Software",
   description:
-    "TradeEqualizer is a mobile‑first PWA for MTG card trading with intelligent matching, real‑time sessions, and USD pricing via TCGplayer Market.",
+    "Magic: The Gathering trade tool with fair trades app features. LGS trading software for events, clubs, and tournaments. Scan QR, compare binders, auto-balance deals.",
   robots: {
     index: false,
     follow: false,
@@ -21,18 +22,18 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "/tradeequalizer" },
   openGraph: {
-    title: "TradeEqualizer – Fair trades first for MTG events and LGS",
+    title: "TradeEqualizer – MTG Trade App | Fair Trades Tool | LGS Trading Software",
     description:
-      "Agree on a fair swap in under 60 seconds using live market prices and want lists. Scan, compare binders, auto‑balance, export a receipt.",
+      "Magic: The Gathering trade tool with fair trades app features. LGS trading software for events, clubs, and tournaments. Scan QR, compare binders, auto-balance deals.",
     url: "https://arcane-foundry.com/tradeequalizer",
     type: "website",
     images: [{ url: "/tradeEqualizer-demo-image.png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TradeEqualizer – Fair trades first for MTG",
+    title: "TradeEqualizer – MTG Trade App | Fair Trades Tool",
     description:
-      "Match‑first trading: scan QR, compare binders, auto‑balance, receipt.",
+      "Magic: The Gathering trade tool with fair trades app features. LGS trading software for events and tournaments.",
     images: ["/tradeEqualizer-demo-image.png"],
   },
 };
@@ -41,8 +42,9 @@ export default function TradeEqualizerPage() {
   return (
     <div className="bg-white">
       <HeroSection />
-      <DemoSection />
+      <TestimonialsSection />
       <ValueProps />
+      <WhyThisMattersSection />
       <PersonasSection />
       <TechOverview />
       <SecurityNote />
@@ -58,29 +60,40 @@ function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 py-16 sm:py-24">
       <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center rounded-full bg-ember/10 px-4 py-2 text-sm font-medium text-ember mb-6">
-            Private Preview
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center rounded-full bg-ember/10 px-4 py-2 text-sm font-medium text-ember mb-6">
+              Private Preview
+            </div>
+            <h1 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+              TradeEqualizer
+            </h1>
+            <p className="mt-3 text-base font-medium text-slate-700">Fair trades first. Faster events. Zero haggling.</p>
+            <p className="mt-4 text-slate-600 sm:text-lg">
+              Agree on a fair swap in under 60 seconds using live market prices and both players' want lists. Scan a QR, compare binders, auto‑balance the deal, and export a receipt.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+              <Button variant="ember" size="lg" className="w-full sm:w-auto font-semibold" asChild>
+                <a href="#signup">Request Private Preview</a>
+              </Button>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+                <a href="#how-it-works">See how it works</a>
+              </Button>
+            </div>
+            <p className="mt-4 text-sm text-slate-500">
+              <a href="#demo" className="underline hover:no-underline">
+                View screenshot
+              </a>{" "}
+              or{" "}
+              <a href="#tech" className="underline hover:no-underline">
+                learn more about the tech
+              </a>
+            </p>
+            <p className="mt-6 text-sm text-slate-500">Built by a senior full‑stack dev and MTG grinder.</p>
           </div>
-          <h1 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
-            TradeEqualizer
-          </h1>
-          <p className="mt-3 text-base font-medium text-slate-700">Fair trades first. Faster events. Zero haggling.</p>
-          <p className="mt-4 text-slate-600 sm:text-lg">
-            Agree on a fair swap in under 60 seconds using live market prices and both players’ want lists. Scan a QR, compare binders, auto‑balance the deal, and export a receipt.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Button variant="ember" size="lg" className="w-full sm:w-auto" asChild>
-              <a href="#signup">Request Private Preview</a>
-            </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-              <a href="#demo">View screenshot</a>
-            </Button>
-            <Button variant="ghost" size="lg" className="w-full sm:w-auto" asChild>
-              <a href="#tech">See how it works</a>
-            </Button>
+          <div className="relative lg:order-first">
+            <ImageGallery />
           </div>
-          <p className="mt-6 text-sm text-slate-500">Built by a senior full‑stack dev and MTG grinder.</p>
         </div>
       </Container>
     </section>
@@ -165,6 +178,37 @@ function DemoSection() {
   );
 }
 
+function WhyThisMattersSection() {
+  return (
+    <section className="py-12 sm:py-16">
+      <Container>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold text-slate-900">Why this matters</h2>
+          <p className="mt-4 text-slate-600">For your trade nights, LGS events, and tournaments</p>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
+              <h3 className="text-sm font-semibold text-slate-900">Faster trades = more games played</h3>
+              <p className="mt-2 text-sm text-slate-600">Less time wasted on haggling means more time for actual gameplay.</p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
+              <h3 className="text-sm font-semibold text-slate-900">Transparent values = fewer arguments</h3>
+              <p className="mt-2 text-sm text-slate-600">Live market pricing eliminates disputes about card values.</p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
+              <h3 className="text-sm font-semibold text-slate-900">Receipts = easy records & tracking</h3>
+              <p className="mt-2 text-sm text-slate-600">Digital receipts make dispute resolution and trade history simple.</p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-5">
+              <h3 className="text-sm font-semibold text-slate-900">Works offline = reliable at events</h3>
+              <p className="mt-2 text-sm text-slate-600">Core trading flows work even with spotty venue internet.</p>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 function PersonasSection() {
   return (
     <section className="py-12 sm:py-16 bg-slate-50">
@@ -176,20 +220,23 @@ function PersonasSection() {
             <ul className="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1">
               <li>Faster, fairer trades with less haggling</li>
               <li>See likely matches instantly</li>
+              <li>Keeps friendships intact</li>
             </ul>
           </div>
           <div className="rounded-xl border border-slate-200 bg-white p-5">
-            <h3 className="text-sm font-semibold text-slate-900">For LGS</h3>
+            <h3 className="text-sm font-semibold text-slate-900">For LGS Owners</h3>
             <ul className="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1">
               <li>Shorter haggles → more games played</li>
               <li>Receipts reduce disputes</li>
+              <li>Potential POS reconciliation</li>
             </ul>
           </div>
           <div className="rounded-xl border border-slate-200 bg-white p-5">
-            <h3 className="text-sm font-semibold text-slate-900">For Clubs</h3>
+            <h3 className="text-sm font-semibold text-slate-900">For Clubs & Events</h3>
             <ul className="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1">
               <li>Quick setup for meetups and events</li>
               <li>Works on spotty venue wifi</li>
+              <li>Boosts event engagement</li>
             </ul>
           </div>
         </div>
@@ -260,12 +307,37 @@ function CTABand() {
   );
 }
 
+function TestimonialsSection() {
+  return (
+    <section className="py-12 sm:py-16 bg-slate-50">
+      <Container>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold text-slate-900">Beta testers wanted</h2>
+          <div className="mt-6 space-y-6">
+            <p className="text-lg text-slate-700">
+              Help shape TradeEqualizer by testing features and providing feedback during our private preview phase.
+            </p>
+            <div className="mt-8">
+              <p className="text-sm text-slate-600">
+                <strong>Perfect for:</strong> LGS owners, college MTG clubs, tournament organizers, and active traders who want to influence the product roadmap.
+              </p>
+              <p className="mt-4 text-sm text-slate-500">
+                Early access • Direct feedback channel • Influence feature priorities • Free during preview
+              </p>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 function TechOverview() {
   return (
     <section id="tech" className="py-14 sm:py-20 bg-slate-50">
       <Container>
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold text-slate-900">How it works</h2>
+          <h2 id="how-it-works" className="text-2xl font-bold text-slate-900">How it works</h2>
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-slate-200 bg-white p-5">
               <div className="text-sm font-semibold text-slate-900">1) Scan & import</div>
@@ -280,32 +352,48 @@ function TechOverview() {
               <p className="mt-2 text-sm text-slate-600">Nudge values to even, confirm, export a receipt.</p>
             </div>
           </div>
-          <h3 className="mt-8 text-xl font-semibold text-slate-900">
-            Roadmap
-          </h3>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-            <li>P0 (current): MTG‑only, market pricing, on‑device session flows</li>
-            <li>P1: Enhanced offline, push notifications</li>
-            <li>P2: Multi‑TCG support</li>
-          </ul>
+          
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold text-slate-900">What's available now</h3>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
+              <li>Planning and design phase (current)</li>
+              <li>Private preview signup</li>
+              <li>Beta tester recruitment</li>
+            </ul>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold text-slate-900">Development timeline</h3>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
+              <li>Initial features launch: Early December 2025</li>
+              <li>Enhanced offline features: Early 2026</li>
+              <li>Push notifications: Mid 2026</li>
+              <li>Multi-TCG support: Late 2026</li>
+            </ul>
+          </div>
+
           <div className="mt-8">
             <h3 className="text-xl font-semibold text-slate-900">FAQ</h3>
             <dl className="mt-4 space-y-4">
               <div>
-                <dt className="text-sm font-medium text-slate-900">Where do prices come from?</dt>
-                <dd className="text-sm text-slate-600">TCGplayer Market pricing.</dd>
+                <dt className="text-sm font-medium text-slate-900">Which games are supported now?</dt>
+                <dd className="text-sm text-slate-600">Currently in planning phase. Initial launch will focus on Magic: The Gathering; other TCGs planned for late 2026.</dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-slate-900">Does it work offline?</dt>
-                <dd className="text-sm text-slate-600">Core flows work without steady internet; syncs when connected.</dd>
+                <dt className="text-sm font-medium text-slate-900">How reliable are the prices?</dt>
+                <dd className="text-sm text-slate-600">Will use live USD pricing from TCGplayer Market to ensure fair, accurate trade suggestions.</dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-slate-900">Which games?</dt>
-                <dd className="text-sm text-slate-600">MTG in preview; more TCGs on the roadmap.</dd>
+                <dt className="text-sm font-medium text-slate-900">What happens to offline trades?</dt>
+                <dd className="text-sm text-slate-600">Core trading flows will work even when connection is spotty; syncs when connected. Enhanced offline features planned for early 2026.</dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-slate-900">What’s the cost?</dt>
-                <dd className="text-sm text-slate-600">Free during private preview; LGS plans available for pilots.</dd>
+                <dt className="text-sm font-medium text-slate-900">Is there a cost?</dt>
+                <dd className="text-sm text-slate-600">Free during private preview and beta testing; special pilot programs for LGS owners with early-adopter discounts.</dd>
+              </div>
+              <div>
+                <dt className="text-sm font-medium text-slate-900">What about privacy / data storage?</dt>
+                <dd className="text-sm text-slate-600">Core trading will run on-device; we'll only store essential account info. No external account scraping. Optional analytics only.</dd>
               </div>
             </dl>
           </div>
@@ -320,11 +408,11 @@ function MobileStickyCTA() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 p-3 shadow-t sm:hidden">
       <div className="mx-auto max-w-3xl flex gap-3">
-        <Button variant="ember" className="flex-1" asChild>
+        <Button variant="ember" className="flex-1 font-semibold" asChild>
           <a href="#signup">Request private preview</a>
         </Button>
         <Button variant="outline" className="flex-1" asChild>
-          <a href="#demo">View screenshot</a>
+          <a href="#how-it-works">See how it works</a>
         </Button>
       </div>
     </div>
