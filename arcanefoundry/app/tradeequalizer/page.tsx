@@ -20,17 +20,36 @@ export const metadata: Metadata = {
     },
   },
   alternates: { canonical: "/tradeequalizer" },
+  openGraph: {
+    title: "TradeEqualizer – Fair trades first for MTG events and LGS",
+    description:
+      "Agree on a fair swap in under 60 seconds using live market prices and want lists. Scan, compare binders, auto‑balance, export a receipt.",
+    url: "https://arcane-foundry.com/tradeequalizer",
+    type: "website",
+    images: [{ url: "/tradeEqualizer-demo-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TradeEqualizer – Fair trades first for MTG",
+    description:
+      "Match‑first trading: scan QR, compare binders, auto‑balance, receipt.",
+    images: ["/tradeEqualizer-demo-image.png"],
+  },
 };
 
 export default function TradeEqualizerPage() {
   return (
     <div className="bg-white">
       <HeroSection />
+      <DemoSection />
       <ValueProps />
+      <PersonasSection />
       <TechOverview />
+      <SecurityNote />
       <CTABand />
       <SignupSection />
       <MobileStickyCTA />
+      <SoftwareAppSchema />
     </div>
   );
 }
@@ -55,7 +74,7 @@ function HeroSection() {
               <a href="#signup">Request Private Preview</a>
             </Button>
             <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-              <a href="#demo">Watch 30‑sec demo</a>
+              <a href="#demo">View screenshot</a>
             </Button>
             <Button variant="ghost" size="lg" className="w-full sm:w-auto" asChild>
               <a href="#tech">See how it works</a>
@@ -112,6 +131,107 @@ function ValueProps() {
   );
 }
 
+function DemoSection() {
+  return (
+    <section id="demo" className="py-10 sm:py-16">
+      <Container>
+        <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">Screenshot preview</h2>
+            <p className="mt-3 text-slate-600">
+              A quick look at scanning binders, seeing fair matches, and exporting a receipt.
+              More UI screenshots coming soon.
+            </p>
+            <div className="mt-5 flex gap-3">
+              <Button variant="ember" asChild>
+                <a href="#signup">Request Private Preview</a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="#tech">How it works</a>
+              </Button>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-3">
+            <img
+              src="/tradeEqualizer-demo-image.png"
+              alt="TradeEqualizer demo"
+              loading="lazy"
+              className="mx-auto h-auto w-full max-w-md"
+            />
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function PersonasSection() {
+  return (
+    <section className="py-12 sm:py-16 bg-slate-50">
+      <Container>
+        <h2 className="text-2xl font-bold text-slate-900 text-center">Built for players and organizers</h2>
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 className="text-sm font-semibold text-slate-900">For Players</h3>
+            <ul className="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1">
+              <li>Faster, fairer trades with less haggling</li>
+              <li>See likely matches instantly</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 className="text-sm font-semibold text-slate-900">For LGS</h3>
+            <ul className="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1">
+              <li>Shorter haggles → more games played</li>
+              <li>Receipts reduce disputes</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 className="text-sm font-semibold text-slate-900">For Clubs</h3>
+            <ul className="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1">
+              <li>Quick setup for meetups and events</li>
+              <li>Works on spotty venue wifi</li>
+            </ul>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function SecurityNote() {
+  return (
+    <section className="py-10">
+      <Container>
+        <div className="mx-auto max-w-3xl rounded-xl border border-slate-200 bg-white p-5">
+          <h3 className="text-lg font-semibold text-slate-900">Data & Security</h3>
+          <p className="mt-2 text-sm text-slate-600">
+            Core trading flows run on-device; we only store what’s needed for pilot access
+            and improvements. No account scraping. Optional, consented analytics only.
+          </p>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function SoftwareAppSchema() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'TradeEqualizer',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description:
+      'Match-first MTG trading tool: scan QR, compare binders, auto-balance trades, export receipts.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
 function CTABand() {
   return (
     <section id="cta" className="py-8 sm:py-10">
@@ -204,7 +324,7 @@ function MobileStickyCTA() {
           <a href="#signup">Request private preview</a>
         </Button>
         <Button variant="outline" className="flex-1" asChild>
-          <a href="#demo">Watch demo</a>
+          <a href="#demo">View screenshot</a>
         </Button>
       </div>
     </div>
